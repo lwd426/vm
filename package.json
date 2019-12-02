@@ -4,7 +4,8 @@
   "description": "A vm that can excute JavaScript Code",
   "main": "vm.js",
   "scripts": {
-    "test": "mocha ./test/index.js"
+    "test": "mocha ./test/index.js",
+    "testWithlog": "showlog=true mocha ./test/index.js"
   },
   "repository": {
     "type": "git",

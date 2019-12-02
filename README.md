@@ -1,5 +1,7 @@
 # vm
-A vm that can excute JavaScript Code
+A vm that can excute JavaScript Code.
+
+使用了AST语法解析JavaScript表达式语句，完成代码执行
 
 # 代码解析
 
@@ -17,7 +19,7 @@ VM('./test/code.js', SCOPE)
 
 ## 1.0.0
 
-功能说明：
+### 功能说明：
 + function 自定义函数定义
   + 入参
   + 变量覆盖赋值
@@ -27,7 +29,23 @@ VM('./test/code.js', SCOPE)
 + 基础作用域链
 + 上下文执行环境
 
-可以解析如下代码：
+### 已经处理的AST TYPE
+
+| AST TYPE  | DESCRIPTION |
+| ------------- | ------------- |
+| Literal  | 字面量取值处理  |
+| Identifier | 标识符取值处理  |
+| FunctionDeclaration | 函数声明  |
+| ExpressionStatement | 表达式定义  |
+| BlockStatement | 块 语句  |
+| ReturnStatement | return表达式  |
+| BinaryExpression | 二元表达式  |
+| MemberExpression | 成员表达式  |
+| CallExpression | 方法调用表达式  |
+| AssignmentExpression | 声明表达式  |
+
+
+### 可以解析如下代码：
 ```javascript
 // ./test/code.js
 function add(a, b) {
