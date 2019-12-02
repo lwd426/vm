@@ -28,12 +28,18 @@ VM('./test/code.js', SCOPE)
 + 函数（作用域对象方法和自定义方法）执行
 + 基础作用域链
 + 上下文执行环境
++ 处理基本语句
+  + 赋值语句
+  + 函数调用语句
+  + 三项表达式
+  + 条件语句（if/else/else if/else）
+  + 二元表达式
 
 ### 已经处理的AST TYPE
 
 | AST TYPE  | DESCRIPTION |
 | ------------- | ------------- |
-| Literal  | 字面量取值处理  |
+| Literal  | 字面量取值处理  |
 | Identifier | 标识符取值处理  |
 | FunctionDeclaration | 函数声明  |
 | ExpressionStatement | 表达式定义  |
@@ -43,6 +49,10 @@ VM('./test/code.js', SCOPE)
 | MemberExpression | 成员表达式  |
 | CallExpression | 方法调用表达式  |
 | AssignmentExpression | 声明表达式  |
+| isConditionalExpression | 条件表达式  |
+| isVariableDeclarator | 变量声明  |
+| isVariableDeclaration | 变量赋值  |
+| isIfStatement | if表达式  |
 
 
 ### 可以解析如下代码：
@@ -61,4 +71,22 @@ console.log(add(1, 2, 4))
 // 7
 
 
+```
+```javascript
+// ./test/ifelseif.js
+if(1>2) {
+  console.log('1')
+} else if(2>4){
+  console.log('2')
+} else {
+  console.log('default')
+}
+// default
+```
+```javascript
+// ./test/ifelseif.js
+var b = '2'
+var a = b === '2' ? true : false;
+console.log(a)
+// true
 ```
