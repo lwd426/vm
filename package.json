@@ -1,0 +1,26 @@
+{
+  "name": "lwd_vm",
+  "version": "1.0.0",
+  "description": "A vm that can excute JavaScript Code",
+  "main": "vm.js",
+  "scripts": {
+    "test": "mocha ./test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwd426/vm.git"
+  },
+  "author": "lwd426@126.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lwd426/vm/issues"
+  },
+  "homepage": "https://github.com/lwd426/vm#readme",
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  },
+  "dependencies": {
+    "babel-types": "^6.26.0",
+    "babylon": "^6.18.0"
+  }
+}
